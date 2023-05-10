@@ -16,9 +16,10 @@ int main() {
         sum = 0;
         for (int j = i; j < N; j++) {
             sum += A[j];
+            if (sum > M)
+                break;
             if (sum == M) {
                 count++;
-                sum = 0;
                 break;
             }
         }
