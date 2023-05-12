@@ -18,21 +18,9 @@ int main() {
     scanf("%d %d", &N, &B);
     char ans[100] = { 0, };
 
-    if (B > 10) {
-        while (N > 0) {
-            if (N % B > 9)
-                ans[i] = (N % B) + 55;
-            else
-                ans[i] = (N % B) + 48;
-
-            i++;
-            N /= B;
-        }
-        reverse(ans);
-    }
-    else if (B == 10) {
-        printf("%d", N);
-        return 0;
+    if (B == 10) {
+      printf("%d", N);
+      return 0;
     }
     else {
         while (N > 0) {
