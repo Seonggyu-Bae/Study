@@ -1,3 +1,5 @@
+import sys
+
 def solve(day, earn):
     global ans
 
@@ -15,7 +17,7 @@ def solve(day, earn):
 
 N = int(input())
 
-TandP = [list(map(int, input().split())) for _ in range(N)]
+TandP = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 ans = 0
 solve(0, 0)
 print(ans)
