@@ -6,10 +6,7 @@ def solve():
     is_reverse = False
     for f in func:
         if f == 'R':
-            if is_reverse:
-                is_reverse = False
-            else:
-                is_reverse = True
+            is_reverse = not is_reverse
         else:
             if num:
                 if is_reverse:
@@ -30,23 +27,16 @@ for tc in range(T):
     n_len = int(stdin.readline().rstrip())
     x = stdin.readline().rstrip()
 
-    num = deque()
     if n_len:
-        num = deque(map(int, x[1:-1].split(',')))
-    p = ''
-    count = 0
+        x = x[1:-1].split(',')
+    else:
+        x = []
+
+    num = deque(x)
 
     if solve():
         if num:
-            ans = '['
-            for idx,x in enumerate(num):
-                if idx == len(num) -1:
-                    ans += str(x)
-                else:
-                    ans += str(x)
-                    ans += ','
-            ans +=']'
-            print(ans)
+            print(f"[{','.join(list(num))}]")
         else:
             print('[]')
     else:
